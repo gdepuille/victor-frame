@@ -2,7 +2,7 @@
 #include <FastLED.h>
 #include <LEDMatrix.h>
 #include <LEDText.h>
-#include <FontRobotron.h>
+#include <FontMatrise.h>
 #include <OneButton.h>
 
 #include "bitmaps/digdug.h"
@@ -73,7 +73,7 @@ const uint8_t bitmapsPatternsSize[] = {
   PacManMsPacSize, QbertSize
 };
 
-uint8_t currentFamilyNumber = 1; // Index of the current pattern family
+uint8_t currentFamilyNumber = 0; // Index of the current pattern family
 uint8_t currentPatternNumber = 0; // Index number of which pattern is current inside the current family of patterns
 uint8_t gHue = 0; // rotating "base color" used by many of the patterns
 uint8_t bitmapAnimationNumber = 0; // Index of the current bitmap animation
@@ -139,7 +139,7 @@ void setup() {
 
   ledMatrix.SetLEDArray(leds);
 
-  ledText.SetFont(RobotronFontData);
+  ledText.SetFont(MatriseFontData);
   ledText.Init(&ledMatrix, ledMatrix.Width(), ledText.FontHeight() + 1, 0, 0);
   ledText.SetText((unsigned char *) txtIntro, sizeof(txtIntro) - 1);
 
